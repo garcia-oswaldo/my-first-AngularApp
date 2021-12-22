@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   // templateUrl: './servers.component.html',
   // if using internal webpage use templateUrl otherwise use back ticks for an inline template
   //template: `<app-server></app-server><app-server></app-server>`,
+  // by adding brackets to the selector it becomes an attribute. Placing a period in front of sector makes it a class.
 
   template: '' +
     '<app-server></app-server>' +
