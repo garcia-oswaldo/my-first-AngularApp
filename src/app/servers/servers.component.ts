@@ -9,16 +9,30 @@ import { Component, OnInit } from '@angular/core';
   //template: `<app-server></app-server><app-server></app-server>`,
   // by adding brackets to the selector it becomes an attribute. Placing a period in front of sector makes it a class.
 
-  template: '' +
-    '<app-server></app-server>' +
-    '<app-server></app-server>',
+  // template: '' +
+  //   '<app-server></app-server>' +
+  //   '<app-server></app-server>',
+  templateUrl: './servers.component.html',
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  allowNewServer = false;
+  serverCreationStatus ="No Server was Created!";
+  serverName = '';
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServer = true }, 2000);
 
-  constructor() { }
-
-  ngOnInit(): void {
   }
 
+  ngOnInit() {
+  }
+  onCreateServer(){
+    this.serverCreationStatus = 'Server was Created!';
+  }
+  onUpdateServerName (event: Event){
+    // console.log(event);
+    this.serverName = (<HTMLInputElement>event.target).value;
+
+  }
 }
